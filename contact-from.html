@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Contact Me</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<script type="text/javascript">
+
+		function validateform(){
+			var name=document.myform.name.value;
+			var email=document.myform.email.value;
+			var title=document.myform.title.value;
+			var message=document.myform.message.value;
+
+			if (name==null || name==""){
+				alert(Please Enter Your Name);
+				return false; 
+			}
+			
+			 if (name.length<4){
+				alert(Enter at least four characters);
+				return false;
+			} else{
+				return true
+			}
+
+			if (email==null || email==""){
+				alert(Please Enter Your Enter);
+				return false; 
+			function validateemail()  
+				{  
+				var x=document.myform.email.value;  
+				var atposition=x.indexOf("@");  
+				var dotposition=x.lastIndexOf(".");  
+				if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length)
+				
+				{alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);   return false;
+			}
+		} 
+
+	</script>
+</head>
+
+<body>
+
+	<div id="container">
+		<header>
+			<nav class="navigation-bar">
+				<ul>
+					<li><a href="contact-from.html">Contact</a></li>
+
+					<li class="active"><a href="Eban.html">Home</a></li>
+					
+				</ul>
+			</nav>
+		</header>
+
+		<div class="contact-form">
+
+			<form id="contact-form" name="myform" method="post" action="" onsubmit="return validatefrom()">
+
+				<input type="text" name="name" class="form-control" placeholder="Enter Name" required><br>
+
+				<input type="email" name="email" class="form-control" placeholder="Enter Email" required><br>
+
+				<input type="text" name="title" class="form-control" placeholder="Title Here" required><br>
+
+				<textarea name="message" class="form-control" placeholder="Message Here" rows="8" required></textarea><br>
+
+				<input type="submit" class="form-control submit" value="Submit Message">
+
+			</form>
+		</div>
+
+	</div>
+</body>
+
+</html>
+
